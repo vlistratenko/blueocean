@@ -16,7 +16,7 @@ pipeline {
     stage('error') {
       steps {
         sh 'echo $PWD'
-        sh 'touch artifact.sh'
+        sh 'touch artifact.jar'
       }
     }
 
