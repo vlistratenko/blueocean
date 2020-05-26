@@ -18,5 +18,11 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        sh './create_file.sh'
+      }
+    }
+
   }
 }
