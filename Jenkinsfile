@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'agent'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
       steps {
@@ -18,7 +13,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         sh './create_file.sh'
       }
