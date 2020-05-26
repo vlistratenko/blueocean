@@ -17,6 +17,7 @@ pipeline {
       steps {
         sh 'echo $PWD'
         sh 'touch artifact.jar'
+        archiveArtifacts(artifacts: 'artifact.jar', fingerprint: true, onlyIfSuccessful: true)
       }
     }
 
