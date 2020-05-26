@@ -15,8 +15,8 @@ pipeline {
 
     stage('error') {
       steps {
+        sh 'echo $PWD'
         sh './create_file.sh'
-        echo '$pwd'
       }
     }
 
