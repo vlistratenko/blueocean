@@ -3,8 +3,12 @@ pipeline {
   stages {
     stage('Copy artifact') {
       steps {
-        sh 'echo $PWD'
-        copyArtifacts(projectName: 'freestyle', fingerprintArtifacts: true, filter: '*.jar', excludes: '*.log', target: '/vit')
+        sh '''echo $PWD
+
+mkdir vit
+
+chmod 777 vit'''
+        copyArtifacts(projectName: 'freestyle', fingerprintArtifacts: true, filter: '*.jar', excludes: '*.log', target: 'vit')
         sh 'cat tobearchived.jar >> newarc.jar'
         archiveArtifacts '*.jar'
       }
