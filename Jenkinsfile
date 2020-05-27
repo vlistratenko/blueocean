@@ -5,7 +5,8 @@ pipeline {
       steps {
         sh 'echo $PWD'
         copyArtifacts(projectName: 'freestyle', fingerprintArtifacts: true, filter: '*.jar', excludes: '*.log')
-        sh 'cat tobearchived.jar'
+        sh 'cat tobearchived.jar >> newarc.jar'
+        archiveArtifacts '*.jar'
       }
     }
 
