@@ -16,8 +16,7 @@ pipeline {
     stage('error') {
       steps {
         sh 'echo $PWD'
-        sh 'touch artifact.jar'
-        archiveArtifacts(artifacts: 'artifact.jar', fingerprint: true, onlyIfSuccessful: true, excludes: '*.log')
+        copyArtifacts(projectName: 'blueocean', fingerprintArtifacts: true, filter: '*.jar', excludes: '*.log')
       }
     }
 
