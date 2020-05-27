@@ -4,7 +4,7 @@ pipeline {
     stage('Copy artifact') {
       steps {
         sh 'echo $PWD'
-        copyArtifacts(projectName: 'blueocean', fingerprintArtifacts: true, filter: '*.jar', excludes: '*.log')
+        copyArtifacts(projectName: 'freestyle', fingerprintArtifacts: true, filter: '*.jar', excludes: '*.log')
       }
     }
 
