@@ -8,9 +8,9 @@ pipeline {
 mkdir vit
 
 chmod 777 vit'''
-        copyArtifacts(projectName: 'freestyle', fingerprintArtifacts: true, filter: '*.jar', excludes: '*.log', target: 'vit')
-        sh 'cat /vit/tobearchived.jar >> newarc.jar'
-        archiveArtifacts '*.jar'
+        copyArtifacts(projectName: 'freestyle', fingerprintArtifacts: true, filter: '*.txt', excludes: '*.log', target: 'vit')
+        sh 'cat $PWD/vit/tobearchived.txt >> newarc.txt'
+        archiveArtifacts '*.jar, *.txt'
       }
     }
 
