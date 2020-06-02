@@ -49,7 +49,7 @@ touch root2.txt'''
 
       }
       steps {
-        unstash 'root.txt'
+        unstash 'root'
         sh 'cat root.txt'
       }
     }
