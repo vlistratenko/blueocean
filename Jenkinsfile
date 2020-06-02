@@ -30,10 +30,10 @@ chmod 777 vit'''
 
           }
           steps {
-            sh '''touch /root.txt
-cd /
+            sh '''touch root.txt
 echo aaa >> root.txt
-touch root2.txt'''
+touch root2.txt
+pwd'''
             stash(name: 'root', allowEmpty: true, includes: '*.txt')
           }
         }
